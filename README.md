@@ -7,4 +7,5 @@ How to run
 ==========
 mvn clean jetty:run
 
-Navigate to <a href="http://localhost:8080/spring-security-demo/secure/index" target="_blank">spring-security-demo</a>
+1. Navigate to <a href="http://localhost:8080/spring-security-demo/secure/index" target="_blank">spring-security-demo</a>
+2. Credentials: ramesh/welcome1
