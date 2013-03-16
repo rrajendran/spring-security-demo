@@ -9,16 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HelloController{
 
     protected final Logger logger = Logger.getLogger(HelloController.class);
+  
     
     @RequestMapping(value={"/secure/index","/"})
-    public ModelAndView home(HttpServletRequest request, HttpServletResponse response, Principal principal)
+    public ModelAndView home(HttpServletRequest request, HttpServletResponse response, 
+    		Principal principal,   @ModelAttribute("rememberMe") String rememberMe)
             throws ServletException, IOException {
+    	System.out.println("rememberMe: " + rememberMe);
+    	
         logger.info("Returning hello view");
         ModelAndView model = new ModelAndView("index");
         String name = principal.getName();

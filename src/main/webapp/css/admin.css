@@ -1,3 +1,24 @@
-body{
-	background-color: rgb(240, 226, 217);
+body {
+	margin: 50px 0px;
+	padding: 0px;
+}
+
+input {
+	padding: 3px;
+	font-size: 15px;
+}
+
+#login {
+	width: 20%;
+	height: 200px;
+	margin: 5% auto;
+	text-align: left;
+	padding: 15px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+}
+
+#login table tr td{
+	padding: 2px;
+	width: 50%;
 }

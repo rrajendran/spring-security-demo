@@ -10,7 +10,7 @@
 	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
 <title>Welcome</title>
 </head>
-<body>
+<body style="background-color: #fff">
 	<h1>Message : ${message}</h1>	
 	<h3>Username : ${username}</h3>	
  
