@@ -1,5 +1,6 @@
-#spring-security-demo
+#Spring Security Demo
 [![Build Status](https://travis-ci.org/rrajendran/spring-security-demo.svg)](https://travis-ci.org/rrajendran/spring-security-demo)
+<br/>
 Show cases simple spring security project.
 
 
