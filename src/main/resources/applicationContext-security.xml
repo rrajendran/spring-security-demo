@@ -6,17 +6,29 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<sec:http auto-config='true'>
 		<sec:intercept-url pattern="/secure/**" access="hasRole('ROLE_USER')"/>
-		<sec:form-login login-page="/login"/>
-		<sec:logout logout-success-url="/secure/index" />
-		<sec:csrf disabled="true"/>
+		<sec:form-login
+				login-page="/login"
+				default-target-url="/secure/index"
+				authentication-failure-url="/login?error"
+				username-parameter="username"
+				password-parameter="password"/>
+		<sec:logout logout-success-url="/login?logout"/>
+		<sec:csrf/>
 	</sec:http>
+
 
 	<sec:authentication-manager>
 		<sec:authentication-provider>
 			<sec:user-service>
-				<sec:user name="admin" password="admin" authorities="ROLE_USER,ROLE_ADMIN"/>
+				<sec:user name="admin" password="admin" authorities="ROLE_USER"/>
 				<sec:user name="guest" password="guest" authorities="ROLE_USER"/>
 			</sec:user-service>
 		</sec:authentication-provider>
 	</sec:authentication-manager>
+
+	<bean id="authenticationSuccessHandler"
+		  class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+		<!-- After login, return to the last visited page -->
+		<property name="useReferer" value="true"/>
+	</bean>
 </beans>

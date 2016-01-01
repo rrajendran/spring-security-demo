@@ -6,14 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="<c:url value="/css/admin.css"/>">
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
 <title>Welcome</title>
 </head>
-<body style="background-color: #fff">
-	<h1>Message : ${message}</h1>	
-	<h3>Username : ${username}</h3>	
+<body>
+    <h1>Message : ${message}</h1>
+   	<h2>Username : ${username}</h2>
+
  
-	<a href="<c:url value="/j_spring_security_logout" />" > Logout</a>
+	<a href="<c:url value="/login?logout" />" > Logout</a>
 </body>
 </html>
