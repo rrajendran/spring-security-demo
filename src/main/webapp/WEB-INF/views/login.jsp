@@ -17,26 +17,6 @@
         <form name='f' action="<c:url value='login' />"
             method='POST'>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            <!--<table id="login">
-                <tr>
-                    <td colspan="2" ><b>Login</b><hr/></td>
-                </tr>
-                <tr>
-                    <td align="right">User</td>
-                    <td><input type='text' name='username' value=''></td>
-                </tr>
-                <tr>
-                    <td align="right">Password</td>
-                    <td><input type='password' name='password' /></td>
-                </tr>
-                <tr>
-                    <td align="right" colspan="2">
-                        Remember Me?<input type="checkbox" id="rememberMe" name="rememberMe">
-                        <input name="submit" type="submit" value="Submit" />
-                        <input name="reset" type="reset" value="Reset"/>
-                    </td>
-                </tr>
-            </table>-->
             <fieldset>
 
                 <p><label>User Name</label></p>
