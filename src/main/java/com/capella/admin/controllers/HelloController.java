@@ -1,20 +1,16 @@
 package com.capella.admin.controllers;
 
-import java.io.IOException;
-import java.security.Principal;
+import org.apache.log4j.Logger;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.log4j.Logger;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import java.io.IOException;
+import java.security.Principal;
 @Controller
 public class HelloController{
 
@@ -23,7 +19,7 @@ public class HelloController{
 
 	@RequestMapping(value={"/secure/index"})
 	@PreAuthorize("hasRole('ROLE_USER')")
-	public ModelAndView home(HttpServletRequest request, HttpServletResponse response, 
+	public ModelAndView home(HttpServletRequest request, HttpServletResponse response,
 			Principal principal)
 					throws ServletException, IOException {
 		ModelAndView model = new ModelAndView("index");
